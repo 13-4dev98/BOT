@@ -232,7 +232,7 @@ app = Flask(__name__)
 
 @app.route('/' + os.getenv('TG_BOT'), methods=['POST'])
 def webhook():
-    update = request.get_json()
+    update = telebot.types.Update.de_json(request.get_json())
     if update:
         bot.process_new_updates([update])
     return "!", 200

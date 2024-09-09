@@ -1,3 +1,4 @@
+import os
 import time
 import telebot
 import requests
@@ -15,12 +16,13 @@ tags = ["1girl"]
 encoded_tags = encode_tags(tags)
 url_template = "https://danbooru.donmai.us/posts.json?limit=1000000&tags={tags}+rating:safe"
 
+# Используем переменные окружения
+TG_BOT = os.getenv('TG_BOT')
+APIFY_API_TOKEN = os.getenv('APIFY_API')
+CHANNEL_ID = os.getenv('CHANNEL_ID_T')
+IDadmin = int(os.getenv('IDadminT'))  # Преобразуем в целое число
+
 bot = telebot.TeleBot(TG_BOT)
-
-APIFY_API_TOKEN = APIFY_API
-
-CHANNEL_ID = CHANNEL_ID_T
-IDadmin = IDadminT  # Make sure this is an integer
 
 client = ApifyClient(APIFY_API_TOKEN)
 photos_data = {}

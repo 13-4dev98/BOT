@@ -241,4 +241,4 @@ if __name__ == "__main__":
     bot.remove_webhook()
     webhook_url = os.getenv('WEBHOOK_URL')
     bot.set_webhook(url=webhook_url)
-    app.run(debug=True, port=int(os.getenv('PORT', 8443)))
+    app.run(host='0.0.0.0', port=8443)

@@ -19,7 +19,7 @@ user_id = os.getenv('user_id')
 bot = telebot.TeleBot(os.getenv('TG_BOT'))
 APIFY_API_TOKEN = os.getenv('APIFY_API')
 CHANNEL_ID = os.getenv('CHANNEL_ID_T')
-IDadmin = os.getenv('IDadminT')  # Make sure this is an integer
+IDadmin = 617758940 # Make sure this is an integer
 
 client = ApifyClient(APIFY_API_TOKEN)
 photos_data = {}
